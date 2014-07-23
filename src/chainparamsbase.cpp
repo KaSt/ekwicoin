@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2014 The Bitcoin developers
+// Copyright (c) 2009-2014 The Ekwicoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,7 +20,7 @@ class CBaseMainParams : public CBaseChainParams {
 public:
     CBaseMainParams() {
         networkID = CBaseChainParams::MAIN;
-        nRPCPort = 8332;
+        nRPCPort = 8772;
     }
 };
 static CBaseMainParams mainParams;
@@ -32,7 +32,7 @@ class CBaseTestNetParams : public CBaseMainParams {
 public:
     CBaseTestNetParams() {
         networkID = CBaseChainParams::TESTNET;
-        nRPCPort = 18332;
+        nRPCPort = 18772;
         strDataDir = "testnet3";
     }
 };

@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bitcoin"
-            VALUE "FileDescription",    "Bitcoin-cli (OSS RPC client for Bitcoin)"
+            VALUE "CompanyName",        "Ekwicoin"
+            VALUE "FileDescription",    "Ekwicoin-cli (OSS RPC client for Ekwicoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "bitcoin-cli"
+            VALUE "InternalName",       "ekwicoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "bitcoin-cli.exe"
-            VALUE "ProductName",        "Bitcoin-cli"
+            VALUE "OriginalFilename",   "ekwicoin-cli.exe"
+            VALUE "ProductName",        "Ekwicoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

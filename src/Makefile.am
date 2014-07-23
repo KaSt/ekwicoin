@@ -28,38 +28,38 @@ if USE_LIBSECP256K1
 BITCOIN_INCLUDES += -I$(srcdir)/secp256k1/include
 endif
 
-LIBBITCOIN_SERVER=libbitcoin_server.a
-LIBBITCOIN_WALLET=libbitcoin_wallet.a
-LIBBITCOIN_COMMON=libbitcoin_common.a
-LIBBITCOIN_CLI=libbitcoin_cli.a
-LIBBITCOIN_UTIL=libbitcoin_util.a
-LIBBITCOIN_CRYPTO=crypto/libbitcoin_crypto.a
-LIBBITCOINQT=qt/libbitcoinqt.a
+LIBBITCOIN_SERVER=libekwicoin_server.a
+LIBBITCOIN_WALLET=libekwicoin_wallet.a
+LIBBITCOIN_COMMON=libekwicoin_common.a
+LIBBITCOIN_CLI=libekwicoin_cli.a
+LIBBITCOIN_UTIL=libekwicoin_util.a
+LIBBITCOIN_CRYPTO=crypto/libekwicoin_crypto.a
+LIBBITCOINQT=qt/libekwicoinqt.a
 
 noinst_LIBRARIES = \
-  libbitcoin_server.a \
-  libbitcoin_common.a \
-  libbitcoin_cli.a \
-  libbitcoin_util.a \
-  crypto/libbitcoin_crypto.a
+  libekwicoin_server.a \
+  libekwicoin_common.a \
+  libekwicoin_cli.a \
+  libekwicoin_util.a \
+  crypto/libekwicoin_crypto.a
 if ENABLE_WALLET
 BITCOIN_INCLUDES += $(BDB_CPPFLAGS)
-noinst_LIBRARIES += libbitcoin_wallet.a
+noinst_LIBRARIES += libekwicoin_wallet.a
 endif
 
 bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += bitcoind
+  bin_PROGRAMS += ekwicoind
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += bitcoin-cli
+  bin_PROGRAMS += ekwicoin-cli
 endif
 
 .PHONY: FORCE
-# bitcoin core #
+# ekwicoin core #
 BITCOIN_CORE_H = \
   addrman.h \
   alert.h \
@@ -126,11 +126,11 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh $(abs_top_builddir)/src/obj/build.h \
 	  $(abs_top_srcdir)
-libbitcoin_util_a-version.$(OBJEXT): obj/build.h
+libekwicoin_util_a-version.$(OBJEXT): obj/build.h
 
-# server: shared between bitcoind and bitcoin-qt
-libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES)
-libbitcoin_server_a_SOURCES = \
+# server: shared between ekwicoind and ekwicoin-qt
+libekwicoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libekwicoin_server_a_SOURCES = \
   addrman.cpp \
   alert.cpp \
   bloom.cpp \
@@ -154,10 +154,10 @@ libbitcoin_server_a_SOURCES = \
   $(JSON_H) \
   $(BITCOIN_CORE_H)
 
-# wallet: shared between bitcoind and bitcoin-qt, but only linked
+# wallet: shared between ekwicoind and ekwicoin-qt, but only linked
 # when wallet enabled
-libbitcoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
-libbitcoin_wallet_a_SOURCES = \
+libekwicoin_wallet_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libekwicoin_wallet_a_SOURCES = \
   db.cpp \
   crypter.cpp \
   rpcdump.cpp \
@@ -167,8 +167,8 @@ libbitcoin_wallet_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libbitcoin_crypto_a_CPPFLAGS = $(BITCOIN_CONFIG_INCLUDES)
-crypto_libbitcoin_crypto_a_SOURCES = \
+crypto_libekwicoin_crypto_a_CPPFLAGS = $(BITCOIN_CONFIG_INCLUDES)
+crypto_libekwicoin_crypto_a_SOURCES = \
   crypto/sha1.cpp \
   crypto/sha2.cpp \
   crypto/ripemd160.cpp \
@@ -177,9 +177,9 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha1.h \
   crypto/ripemd160.h
 
-# common: shared between bitcoind, and bitcoin-qt and non-server tools
-libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
-libbitcoin_common_a_SOURCES = \
+# common: shared between ekwicoind, and ekwicoin-qt and non-server tools
+libekwicoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libekwicoin_common_a_SOURCES = \
   allocators.cpp \
   base58.cpp \
   chainparams.cpp \
@@ -196,8 +196,8 @@ libbitcoin_common_a_SOURCES = \
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
-libbitcoin_util_a_SOURCES = \
+libekwicoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
+libekwicoin_util_a_SOURCES = \
   compat/glibc_sanity.cpp \
   compat/glibcxx_sanity.cpp \
   chainparamsbase.cpp \
@@ -210,20 +210,20 @@ libbitcoin_util_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
-libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
+libekwicoin_util_a_SOURCES += compat/glibc_compat.cpp
+libekwicoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between bitcoin-cli and bitcoin-qt
-libbitcoin_cli_a_SOURCES = \
+# cli: shared between ekwicoin-cli and ekwicoin-qt
+libekwicoin_cli_a_SOURCES = \
   rpcclient.cpp \
   $(BITCOIN_CORE_H)
 
-nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libekwicoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# bitcoind binary #
-bitcoind_LDADD = \
+# ekwicoind binary #
+ekwicoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -232,40 +232,40 @@ bitcoind_LDADD = \
   $(LIBMEMENV)
 
 if USE_LIBSECP256K1
-  bitcoind_LDADD += secp256k1/libsecp256k1.la
+  ekwicoind_LDADD += secp256k1/libsecp256k1.la
 endif
 
 if ENABLE_WALLET
-bitcoind_LDADD += libbitcoin_wallet.a
+ekwicoind_LDADD += libekwicoin_wallet.a
 endif
-bitcoind_SOURCES = bitcoind.cpp
+ekwicoind_SOURCES = ekwicoind.cpp
 #
 
 if TARGET_WINDOWS
-bitcoind_SOURCES += bitcoind-res.rc
+ekwicoind_SOURCES += ekwicoind-res.rc
 endif
 
-bitcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
-bitcoind_CPPFLAGS = $(BITCOIN_INCLUDES)
+ekwicoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
+ekwicoind_CPPFLAGS = $(BITCOIN_INCLUDES)
 
-# bitcoin-cli binary #
-bitcoin_cli_LDADD = \
+# ekwicoin-cli binary #
+ekwicoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(BOOST_LIBS)
-bitcoin_cli_SOURCES = \
-  bitcoin-cli.cpp
+ekwicoin_cli_SOURCES = \
+  ekwicoin-cli.cpp
 
 if USE_LIBSECP256K1
-  bitcoin_cli_LDADD += secp256k1/libsecp256k1.la
+  ekwicoin_cli_LDADD += secp256k1/libsecp256k1.la
 endif
-bitcoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
+ekwicoin_cli_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
 
 if TARGET_WINDOWS
-bitcoin_cli_SOURCES += bitcoin-cli-res.rc
+ekwicoin_cli_SOURCES += ekwicoin-cli-res.rc
 endif
 
 CLEANFILES = leveldb/libleveldb.a leveldb/libmemenv.a *.gcda *.gcno

@@ -4,11 +4,11 @@
 # Test fee estimation code
 #
 
-from test_framework import BitcoinTestFramework
-from bitcoinrpc.authproxy import AuthServiceProxy, JSONRPCException
+from test_framework import EkwicoinTestFramework
+from ekwicoinrpc.authproxy import AuthServiceProxy, JSONRPCException
 from util import *
 
-class EstimateFeeTest(BitcoinTestFramework):
+class EstimateFeeTest(EkwicoinTestFramework):
 
     def setup_network(self, test_dir):
         nodes = []

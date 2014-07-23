@@ -72,12 +72,12 @@ MSYS shell:
 	mkdir miniupnpc
 	cp *.h miniupnpc/
 
-Bitcoin
+Ekwicoin
 -------
 MSYS shell:
 
-	cd \bitcoin
+	cd \ekwicoin
 	sh autogen.sh
 	sh configure
 	mingw32-make
-	strip bitcoind.exe
+	strip ekwicoind.exe

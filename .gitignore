@@ -1,11 +1,11 @@
 *.tar.gz
 
 *.exe
-src/bitcoin
-src/bitcoind
-src/bitcoin-cli
-src/test/test_bitcoin
-src/qt/test/test_bitcoin-qt
+src/ekwicoin
+src/ekwicoind
+src/ekwicoin-cli
+src/test/test_ekwicoin
+src/qt/test/test_ekwicoin-qt
 
 Makefile.in
 aclocal.m4
@@ -13,8 +13,8 @@ autom4te.cache/
 config.log
 config.status
 configure
-src/config/bitcoin-config.h
-src/config/bitcoin-config.h.in
+src/config/ekwicoin-config.h
+src/config/ekwicoin-config.h.in
 src/config/stamp-h1
 src/build-aux/
 share/setup.nsi
@@ -43,7 +43,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.bitcoin
+.ekwicoin
 *.a
 *.pb.cc
 *.pb.h
@@ -58,12 +58,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-bitcoin-qt
-Bitcoin-Qt.app
+ekwicoin-qt
+Ekwicoin-Qt.app
 
 # Unit-tests
 Makefile.test
-bitcoin-qt_test
+ekwicoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
@@ -78,7 +78,7 @@ build
 #lcov
 *.gcno
 /*.info
-test_bitcoin.coverage/
+test_ekwicoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -86,7 +86,7 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
-qa/pull-tester/run-bitcoind-for-test.sh
+qa/pull-tester/run-ekwicoind-for-test.sh
 qa/pull-tester/build-tests.sh
 
 !src/leveldb*/Makefile

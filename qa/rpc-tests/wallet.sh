@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2013-2014 The Bitcoin Core developers
+# Copyright (c) 2013-2014 The Ekwicoin Core developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,8 +13,8 @@ fi
 
 set -f
 
-BITCOIND=${1}/bitcoind
-CLI=${1}/bitcoin-cli
+BITCOIND=${1}/ekwicoind
+CLI=${1}/ekwicoin-cli
 
 DIR="${BASH_SOURCE%/*}"
 SENDANDWAIT="${DIR}/send.sh"
