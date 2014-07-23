@@ -2621,8 +2621,8 @@ Endereço: %4</translation>
         <translation>Especificar pasta de dados</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Escute ligações na porta &lt;n&gt; (por defeito: 8333 ou testnet: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 7233 or testnet: 17233)</source>
+        <translation>Escute ligações na porta &lt;n&gt; (por defeito: 7233 ou testnet: 17233)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>

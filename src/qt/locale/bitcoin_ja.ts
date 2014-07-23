@@ -2623,8 +2623,8 @@ Address: %4
         <translation>データ ディレクトリの指定</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>接続のポート番号 (初期値: 8333、testnet: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 7233 or testnet: 17233)</source>
+        <translation>接続のポート番号 (初期値: 7233、testnet: 17233)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>

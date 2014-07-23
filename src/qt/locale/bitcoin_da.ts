@@ -2622,8 +2622,8 @@ Adresse: %4
         <translation>Angiv datamappe</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>Lyt til forbindelser på &lt;port&gt; (standard: 8333 eller testnetværk: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 7233 or testnet: 17233)</source>
+        <translation>Lyt til forbindelser på &lt;port&gt; (standard: 7233 eller testnetværk: 17233)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>

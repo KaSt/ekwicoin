@@ -47,11 +47,11 @@ reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equiv
 config file):
 
 	HiddenServiceDir /var/lib/tor/ekwicoin-service/
-	HiddenServicePort 8333 127.0.0.1:8333
-	HiddenServicePort 18333 127.0.0.1:18333
+	HiddenServicePort 7233 127.0.0.1:7233
+	HiddenServicePort 17233 127.0.0.1:17233
 
 The directory can be different of course, but (both) port numbers should be equal to
-your ekwicoind's P2P listen port (8333 by default).
+your ekwicoind's P2P listen port (7233 by default).
 
 	-externalip=X   You can tell ekwicoin about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
@@ -81,7 +81,7 @@ specify:
 
 	./ekwicoind ... -discover
 
-and open port 8333 on your firewall (or use -upnp).
+and open port 7233 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:

@@ -212,7 +212,7 @@ QT_TRANSLATE_NOOP("ekwicoin-core", "Invalid amount for -paytxfee=<amount>: '%s'"
 QT_TRANSLATE_NOOP("ekwicoin-core", "Invalid amount"),
 QT_TRANSLATE_NOOP("ekwicoin-core", "Keep at most <n> unconnectable blocks in memory (default: %u)"),
 QT_TRANSLATE_NOOP("ekwicoin-core", "Limit size of signature cache to <n> entries (default: 50000)"),
-QT_TRANSLATE_NOOP("ekwicoin-core", "Listen for connections on <port> (default: 8333 or testnet: 18333)"),
+QT_TRANSLATE_NOOP("ekwicoin-core", "Listen for connections on <port> (default: 7233 or testnet: 17233)"),
 QT_TRANSLATE_NOOP("ekwicoin-core", "Loading addresses..."),
 QT_TRANSLATE_NOOP("ekwicoin-core", "Loading block index..."),
 QT_TRANSLATE_NOOP("ekwicoin-core", "Loading wallet..."),

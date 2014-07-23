@@ -2624,8 +2624,8 @@ Address: %4
         <translation>指定資料目錄</translation>
     </message>
     <message>
-        <source>Listen for connections on &lt;port&gt; (default: 8333 or testnet: 18333)</source>
-        <translation>在通訊埠 &lt;port&gt; 聽候連線(預設值: 8333, 或若是測試網路: 18333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 7233 or testnet: 17233)</source>
+        <translation>在通訊埠 &lt;port&gt; 聽候連線(預設值: 7233, 或若是測試網路: 17233)</translation>
     </message>
     <message>
         <source>Maintain at most &lt;n&gt; connections to peers (default: 125)</source>
